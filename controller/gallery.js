@@ -16,7 +16,7 @@ export const addGallery = async (req, res, next) => {
 
         res.status(201).json({
             message: "Gallery added successfully",
-            gallery, 
+            gallery 
         });
     } catch (error) {
         next(error);
