@@ -16,7 +16,7 @@ export const addGallery = async (req, res, next) => {
 
         res.status(201).json({
             message: "Gallery added successfully",
-            gallery, // Full model data including database metadata
+            gallery, 
         });
     } catch (error) {
         next(error);
