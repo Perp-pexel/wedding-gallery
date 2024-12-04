@@ -5,7 +5,7 @@ export const addGallery = async (req, res, next) => {
     try {
         const { error, value } = addGalleryValidator.validate({
             ...req.body,
-            image: req.file?.filename || null, // Handle missing file uploads gracefully
+            image: req.file?.filename || null
         });
 
         if (error) {
@@ -16,7 +16,7 @@ export const addGallery = async (req, res, next) => {
 
         res.status(201).json({
             message: "Gallery added successfully",
-            gallery 
+            gallery
         });
     } catch (error) {
         next(error);
@@ -29,7 +29,7 @@ export const getGallery = async (req, res, next) => {
 
         res.status(200).json({
             message: "Galleries fetched successfully",
-            gallery, // Return all galleries
+            gallery
         });
     } catch (error) {
         next(error);
@@ -46,7 +46,7 @@ export const getOneGallery = async (req, res, next) => {
 
         res.status(200).json({
             message: "Gallery fetched successfully",
-            gallery, // Return the requested gallery
+            gallery
         });
     } catch (error) {
         next(error);
@@ -57,7 +57,7 @@ export const updateGallery = async (req, res, next) => {
     try {
         const { error, value } = updateGalleryValidator.validate({
             ...req.body,
-            image: req.file?.filename || undefined, // Update image if provided
+            image: req.file?.filename || undefined
         });
 
         if (error) {
@@ -72,7 +72,7 @@ export const updateGallery = async (req, res, next) => {
 
         res.status(200).json({
             message: "Gallery updated successfully",
-            gallery, // Return the updated gallery
+            gallery
         });
     } catch (error) {
         next(error);
@@ -89,7 +89,7 @@ export const deleteGallery = async (req, res, next) => {
 
         res.status(200).json({
             message: "Gallery deleted successfully",
-            gallery, // Return the deleted gallery
+            gallery
         });
     } catch (error) {
         next(error);
