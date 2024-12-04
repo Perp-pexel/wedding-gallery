@@ -2,9 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import galleryRouter from "./route/gallery.js";
+import Joi from "joi";
+import multer from "multer";
 
 // connect to database
-// await mongoose.connect(process.env.MONGO_URI);
+await mongoose.connect(process.env.MONGO_URI);
 
 //  create an express app
 const app = express();
